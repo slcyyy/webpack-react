@@ -44,6 +44,15 @@ const devServer = new WebpackDevServer(
       directory: path.join(__dirname, "../public"), // 托管静态资源public文件夹
     },
     headers: { "Access-Control-Allow-Origin": "*" },
+    proxy: {
+      /* 一旦devServer(port:5000)服务器接收到 ^/api/xxx 的请求,就会把请求转发到另外一个服务器(target)上 */
+      "/mock": {
+        target: "http://localhost:3001",
+        pathRewrite: {
+          "^/mock": "",
+        },
+      },
+    },
   },
   webpack(devConfig)
 );
