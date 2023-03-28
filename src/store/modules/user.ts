@@ -17,8 +17,11 @@ const initialState = {
 const userSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
-  // 处理调用异步action的结果（extraReducers也可以处理来自其他模块的action,自定义编写reducer更新这一模块的数据）
+  reducers: {
+    // 这里同时也定义了action creator，函数名就是action的名称,👇举了个例子
+    test(state, action) {},
+  },
+  // 处理调用异步action的结果（extraReducers也可以处理来自其他模块的action,导入就行，自定义编写reducer更新这一模块的数据）
   extraReducers(builder) {
     builder.addCase(fetchUsers.pending, (state, action) => {
       state.status = "loading";
@@ -48,6 +51,9 @@ export const addUser = createAsyncThunk("addUser", async (params: User) => {
   const res = await http.post("/users", params);
   return res.data;
 });
+
+// 通过下面这种方式，能够拿到该store的action
+const { test } = userSlice.actions;
 
 // 提供给useSelector使用，遍于userStore中的数据
 export const selectUsersData = (state: any) => state.users;
