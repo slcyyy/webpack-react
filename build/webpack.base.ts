@@ -27,7 +27,7 @@ const baseConfig: Configuration = {
       },
       {
         test: /.css$/, //匹配 css 文件
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
@@ -36,6 +36,7 @@ const baseConfig: Configuration = {
     // 别名需要配置两个地方，这里和 tsconfig.json
     alias: {
       "@": path.join(__dirname, "../src"),
+      pages: path.join(__dirname, "../src/pages"),
     },
 
     modules: ["node_modules"], // 查找第三方模块只在本项目的node_modules中查找

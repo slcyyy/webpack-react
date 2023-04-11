@@ -1,0 +1,82 @@
+Arguments: 
+  /Users/idcos/.nvm/versions/node/v18.15.0/bin/node /opt/homebrew/bin/yarn install
+
+PATH: 
+  /Users/idcos/.nvm/versions/node/v18.15.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/idcos/.nvm/versions/node/v18.15.0/bin:/Users/idcos/Library/pnpm:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/idcos/Library/Caches/Yarn/v6/npm-yallist-4.0.0-9bb92790d9c0effec63be73519e11a35019a3a72-integrity/node_modules/yallist/LICENSE' -> '/Users/idcos/luochun/my/webpack-react/node_modules/css-loader/node_modules/yallist/LICENSE'
+
+npm manifest: 
+  {
+    "name": "webpack-react",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev:dev": "cross-env NODE_ENV=development BASE_ENV=development webpack serve -c build/webpack.dev.ts",
+      "dev:test": "cross-env NODE_ENV=development BASE_ENV=test webpack serve -c build/webpack.dev.ts",
+      "dev:pre": "cross-env NODE_ENV=development BASE_ENV=pre webpack serve -c build/webpack.dev.ts",
+      "dev:prod": "cross-env NODE_ENV=development BASE_ENV=production webpack serve -c build/webpack.dev.ts",
+      "build:dev": "cross-env NODE_ENV=production BASE_ENV=development webpack -c build/webpack.prod.ts",
+      "build:test": "cross-env NODE_ENV=production BASE_ENV=test webpack -c build/webpack.prod.ts",
+      "build:pre": "cross-env NODE_ENV=production BASE_ENV=pre webpack -c build/webpack.prod.ts",
+      "build:prod": "cross-env NODE_ENV=production BASE_ENV=production webpack -c build/webpack.prod.ts",
+      "mock": "json-server --watch mock/db.js --port 3001"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@reduxjs/toolkit": "^1.9.3",
+      "axios": "^1.3.4",
+      "dotenv": "^16.0.3",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-is": "^18.2.0",
+      "react-redux": "^8.0.5",
+      "styled-components": "^5.3.9"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.21.3",
+      "@babel/preset-env": "^7.20.2",
+      "@babel/preset-react": "^7.18.6",
+      "@babel/preset-typescript": "^7.21.0",
+      "@faker-js/faker": "^7.6.0",
+      "@types/node": "^18.15.3",
+      "@types/react": "^18.0.28",
+      "@types/react-dom": "^18.0.11",
+      "@types/react-router-dom": "^5.3.3",
+      "babel-loader": "^9.1.2",
+      "babel-plugin-styled-windicss": "^1.0.1",
+      "copy-webpack-plugin": "^11.0.0",
+      "core-js": "^3.29.1",
+      "cross-env": "^7.0.3",
+      "css-loader": "^6.7.3",
+      "html-webpack-plugin": "^5.5.0",
+      "json-server": "^0.17.3",
+      "style-loader": "^3.3.2",
+      "tailwindcss": "^3.2.7",
+      "ts-node": "^10.9.1",
+      "typescript": "^5.0.2",
+      "webpack": "^5.76.2",
+      "webpack-cli": "^5.0.1",
+      "webpack-dev-server": "^4.12.0",
+      "webpack-merge": "^5.8.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

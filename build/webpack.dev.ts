@@ -47,7 +47,7 @@ const devServer = new WebpackDevServer(
     proxy: {
       /* 一旦devServer(port:5000)服务器接收到 ^/api/xxx 的请求,就会把请求转发到另外一个服务器(target)上 */
       "/mock": {
-        target: "http://localhost:3001",
+        target: "http://localhost:3002",
         pathRewrite: {
           "^/mock": "",
         },
