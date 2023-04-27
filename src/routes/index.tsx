@@ -4,6 +4,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { HomeLayout } from "@/layouts";
 import WebSocktDemo from "@/pages/websocket/simple";
+import '@/styles/common'
+
 const router = createBrowserRouter([
   {
     path: "/",

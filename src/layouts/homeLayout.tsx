@@ -18,19 +18,19 @@ export default () => {
   console.log(MENU);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline text-red-400">
-        Hello world!
-      </h1>
-      <h2>test main</h2>
-      {MENU.map((item: MENU_ITEM) =>
-        item.children ? null : (
-          <div key={item.path}>
-            <Link to={item.path}>{item.label}</Link>
-          </div>
-        )
-      )}
+    <div className="flex">
+      <div className="menu">
+        {MENU.map((item: MENU_ITEM) =>
+          item.children ? null : (
+            <div key={item.path}>
+              <Link to={item.path}>{item.label}</Link>
+            </div>
+          )
+        )}
+      </div>
+
       <div>
+        <div className="bg-red filter-grayscale">banana</div>
         <Outlet />
       </div>
     </div>

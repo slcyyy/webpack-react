@@ -36,10 +36,11 @@ export default () => {
     <>
       <div>websocket</div>
       <div>
-        <button type="button" onClick={handleClick}>
+        <button className="btn" type="button" onClick={handleClick}>
           连接websocket服务
         </button>
         <button
+          className="btn-blue"
           type="button"
           onClick={() => {
             socket?.close(1000, "客户端主动关闭");
