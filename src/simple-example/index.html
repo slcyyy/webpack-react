@@ -1,0 +1,118 @@
+<!-- 颜色主题切换 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+   
+     /* 跟主题无关/默认的全局变量放到root里 */
+      :root{
+        --border-radius-base: 6px;
+        
+      }
+      /* 明亮 */
+      :root.light{
+          --body-background: #efefef;
+          --border-color:green;
+          --text-color:#333333;
+      }
+      /* 深色 */
+      :root.dark{
+         --body-background: #000;
+          --text-color:white;
+        --border-color:red;
+      }
+     body {
+        background: var(--body-background,'yellow');
+        color:var(--text-color)
+      }
+      
+
+      .box{
+        width:200px;
+        height:200px;
+        border-color:var(--border-color);
+        border-style:solid;
+        border-width:1px;
+        border-radius: var(--border-radius-base);
+      }
+
+     
+    
+    </style>
+  </head>
+  <body>
+    <section>
+      <span style="color: var(--text-color);">当前主题:</span>
+      <span id="themeText" style="color: var(--text-color);"></span>
+      <button id="btn">点击切换</button>
+      <div class="box">a box</div>
+
+    </section>
+
+    <!-- 页面提供主题切换按钮，用户主动切换 -->
+    <script>
+      !(() => {
+        const htmlEl = document.documentElement;
+        const buttonEl = document.getElementById("btn");
+        const themeTextEl = document.getElementById("themeText");
+
+        buttonEl.addEventListener("click", () => {
+          const currentTheme = localStorage.getItem('theme') || 'light'
+          
+          // const currentTheme = htmlEl.getAttribute("data-theme");
+          const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+          themeTextEl.innerText = nextTheme;
+           // class移除旧主题，添加新主题.如果有更多主题的话还是 add remove更合适一点
+          document.documentElement.classList.toggle(currentTheme)
+          document.documentElement.classList.toggle(nextTheme)
+          localStorage.setItem('theme',nextTheme)
+        });
+      })();
+    </script>
+    <!-- 根据电脑系统的偏好进行主题更换 -->
+    <script>
+      !(() => {
+        const htmlEl = document.documentElement;
+        const themeTextEl = document.getElementById("themeText");
+        // 给HTML DOM节点添加自定义主题，标识当前主题
+        const toggleTheme = (isDarkMode) => {
+          const nextTheme = isDarkMode ? "dark" : "light";
+          localStorage.setItem('theme',nextTheme)
+          themeTextEl.innerText = nextTheme;
+  
+         // class移除旧主题，添加新主题。因为是页面初始化加载时进行切换，所以用add remove
+          document.documentElement.classList.add(nextTheme)
+           document.documentElement.classList.remove(nextTheme == 'dark'?'light':'dark')
+        };
+
+        const themeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+        // 页面初始化切换
+        toggleTheme(themeMedia.matches);
+
+        // 监听系统切换
+        themeMedia.addListener((e) => {
+          toggleTheme(e.matches);
+        });
+      })();
+    </script>
+
+    <!-- 通过URL控制当前主题 -->
+    <script>
+      !(() => {
+        const htmlEl = document.documentElement;
+        const themeTextEl = document.getElementById("themeText");
+        const search = new URLSearchParams(location.search);
+        const theme = search.get("theme") || "light";
+        localStorage.setItem('theme',theme)
+        themeTextEl.innerText = theme;
+          // class移除旧主题，添加新主题
+          document.documentElement.classList.add(theme)
+           document.documentElement.classList.remove(theme==='dark'?'light':'dark')
+      })();
+
+    </script>
+  </body>
+</html>

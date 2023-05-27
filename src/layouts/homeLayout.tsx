@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import { Link, Outlet } from "react-router-dom";
 const MENU = [
   {
@@ -15,14 +16,15 @@ type MENU_ITEM = {
   children?: null | Array<MENU_ITEM>;
 };
 export default () => {
-  console.log(MENU);
-
+  const handleClick = () => {
+    // console.log(a); // 会有一个报错
+  };
   return (
     <div className="flex">
       <div className="menu">
         {MENU.map((item: MENU_ITEM) =>
           item.children ? null : (
-            <div key={item.path}>
+          <div key={item.path}>
               <Link to={item.path}>{item.label}</Link>
             </div>
           )
@@ -31,6 +33,7 @@ export default () => {
 
       <div>
         <div className="bg-red filter-grayscale">banana</div>
+        <Button onClick={handleClick}> 点击报错</Button>
         <Outlet />
       </div>
     </div>

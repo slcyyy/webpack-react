@@ -6,6 +6,7 @@ import path from "path";
 
 const prodConfig: Configuration = merge(baseConfig, {
   mode: "production", // 生产模式,会开启tree-shaking和压缩代码,以及其他优化
+  devtool:"source-map",
   plugins: [
     new CopyPlugin({
       patterns: [
