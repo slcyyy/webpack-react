@@ -1,14 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-h2 {
-  color: aqua;
-}
 
 @layer components {
-  .btn-blue {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  .glass {
+    backdrop-filter: blur(14px) saturate(187%);
+    -webkit-backdrop-filter: blur(14px) saturate(187%);
+    background-color: rgba(255, 255, 255, 0.36);
   }
+  /* ... */
 }
 
 @layer utilities {
@@ -20,10 +20,6 @@ h2 {
   }
 }
 
-@media screen(md){
-  .menu{
-    display:none;
-    /* /* display:none */
-    /* border:1px solid black; */
-  }
+#root {
+  @apply w-full h-full overflow-hidden;
 }

@@ -38,41 +38,7 @@ function App() {
     setSex('')
   }
 
-  return (
-    <RouterProvider router={router} />
-    // <>
-    //   <h2>{status}</h2>
-    //   <div>
-    //     {users.map((item: any) => (
-    //       <div>{item.name}</div>
-    //     ))}
-    //   </div>
-    //   <form>
-    //     <input
-    //       name="username"
-    //       placeholder="Please input username!"
-    //       value={username}
-    //       onChange={(e) => {
-    //         setUsername(e.target.value);
-    //       }}
-    //     />
-    //     <input
-    //       name="email"
-    //       placeholder="Please input email!"
-    //       value={email}
-    //       onChange={(e) => {
-    //         setEmail(e.target.value);
-    //       }}
-    //     />
-    //     <select name="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
-    //       <option value="">请选择性别</option>
-    //       <option value="male">male</option>
-    //       <option value="female">female</option>
-    //     </select>
-    //     <button onClick={addUserEvent}>提交</button>
-    //   </form>
-    // </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

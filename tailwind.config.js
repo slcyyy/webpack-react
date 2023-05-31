@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,jsx,tsx,ts}"],
+  content: ['./index.html', './src/**/*.{js,jsx,tsx,ts}'],
   theme: {
     extend: {},
   },
@@ -8,4 +8,4 @@ module.exports = {
   corePlugins: {
     preflight: false, // 避免样式冲突
   },
-};
+}
