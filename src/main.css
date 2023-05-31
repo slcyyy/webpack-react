@@ -4,8 +4,8 @@
 
 @layer components {
   .glass {
-    backdrop-filter: blur(14px) saturate(187%);
-    -webkit-backdrop-filter: blur(14px) saturate(187%);
+    backdrop-filter: blur(3px) saturate(187%);
+    -webkit-backdrop-filter: blur(3px) saturate(187%);
     background-color: rgba(255, 255, 255, 0.36);
   }
   /* ... */
