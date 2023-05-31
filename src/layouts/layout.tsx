@@ -1,6 +1,7 @@
 import { Button } from 'antd'
 import { Link, Outlet } from 'react-router-dom'
 import styled from 'styled-components'
+import { AnimatedCircleBackground } from './background'
 
 const MENU = [
   {
@@ -33,6 +34,7 @@ export const Layout = () => {
       className="w-full h-full bg-cover bg-no-repeat overflow-auto"
       style={{ backgroundImage: 'url(/bg.png)' }}
     >
+      <AnimatedCircleBackground />
       <header className="fixed top-0 glass h-[80px] w-full">header</header>
       <main className="pb-[80px]">
         <Outlet></Outlet>
