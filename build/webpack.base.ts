@@ -34,10 +34,13 @@ const baseConfig: Configuration = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
-              modules: true,
+              modules: {
+                auto: /\.module\.css$/i,
+                localIdentName: '[local]__[hash:base64:5]', // 定义类名
+              },
             },
           },
+
           'postcss-loader',
         ],
       },
