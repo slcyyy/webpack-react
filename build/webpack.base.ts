@@ -23,11 +23,11 @@ const baseConfig: Configuration = {
   module: {
     rules: [
       {
-        test: /.(ts|tsx)$/, // 匹配.ts, tsx文件
+        test: /\.(ts|tsx)$/, // 匹配.ts, tsx文件
         use: 'babel-loader',
       },
       {
-        test: /.css$/, //匹配 css 文件
+        test: /\.css$/, //匹配 css 文件
         // exclude: /node_modules/,
         use: [
           'style-loader',
