@@ -28,7 +28,18 @@ const baseConfig: Configuration = {
       },
       {
         test: /.css$/, //匹配 css 文件
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        // exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+          'postcss-loader',
+        ],
       },
     ],
   },

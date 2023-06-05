@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useCallback, memo } from 'react'
 import { Button } from 'antd'
 import { useImmer } from 'use-immer'
+import { QuestionCard } from './components'
 
 export const QuestionnaireStar = () => {
   const [questionList, setQuestionList] = useImmer([
@@ -13,18 +14,16 @@ export const QuestionnaireStar = () => {
   // handle delete
   const handleDelete = (id: string) => {
     setQuestionList(draft => {
-      const idx = draft.findIndex(item => item.id === id)
-      draft.splice(idx, 1)
+      // const idx = draft.findIndex(item => item.id === id)
+      // draft.splice(idx, 1)
+      const item = draft.find(item => item.id === id)
+      item!.id = item!.id + 'test'
     })
   }
   return (
     <div>
       {questionList.map(item => (
-        <div key={item.id} className="h-12 w-[300px] border-solid border-slate-800 mb-2">
-          {item.title}
-          <Button>编辑</Button>
-          <Button onClick={() => handleDelete(item.id)}>删除</Button>
-        </div>
+        <QuestionCard key={item.id} deleteFn={handleDelete} title={item.title} id={item.id} />
       ))}
     </div>
   )

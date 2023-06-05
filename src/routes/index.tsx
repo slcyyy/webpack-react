@@ -4,7 +4,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Layout, CourseLayout } from '@/layouts'
 import WebSocktDemo from '@/pages/websocket/simple'
-import '@/styles/common'
 import { QuestionnaireStar } from '@/pages/questionnaire-start'
 
 const router = createBrowserRouter([

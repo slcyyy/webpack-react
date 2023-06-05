@@ -21,6 +21,7 @@ specifiers:
   axios: ^1.3.4
   babel-loader: ^9.1.2
   babel-plugin-styled-windicss: ^1.0.1
+  classnames: ^2.3.2
   copy-webpack-plugin: ^11.0.0
   core-js: ^3.29.1
   cross-env: ^7.0.3
@@ -61,6 +62,7 @@ dependencies:
   '@types/styled-components': 5.1.26
   antd: 5.4.0_biqbaboplfbrettd7655fr4n2y
   axios: 1.3.4
+  classnames: 2.3.2
   dotenv: 16.0.3
   immer: 10.0.2
   react: 18.2.0
