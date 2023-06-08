@@ -44,6 +44,25 @@ const baseConfig: Configuration = {
           'postcss-loader',
         ],
       },
+      {
+        test: /\.scss$/, //匹配 css 文件
+        // exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: /\.module\.scss$/i, //!!
+                localIdentName: '[local]__[hash:base64:5]', // 定义类名
+              },
+            },
+          },
+
+          'postcss-loader',
+          'sass-loader', // Compiles Sass to CSS
+        ],
+      },
     ],
   },
   resolve: {

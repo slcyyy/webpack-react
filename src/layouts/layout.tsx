@@ -35,7 +35,9 @@ export const Layout = () => {
       style={{ backgroundImage: 'url(/bg.png)' }}
     >
       <AnimatedCircleBackground />
-      <header className="fixed top-0 glass h-[80px] w-full">header</header>
+      <header className="fixed top-0 glass h-[80px] w-full">
+        <Link to="/question">问卷星</Link>
+      </header>
       <main className="pb-[80px]">
         <Outlet></Outlet>
       </main>
